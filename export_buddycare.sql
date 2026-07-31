@@ -1,27 +1,33 @@
 SELECT
-  CASE 
-    WHEN p.sex = 1 THEN '003'
-    WHEN p.sex = 2 THEN '004'
-  END AS 'คำนำหน้า',
-  p.fname AS "ชื่อ",
-  p.lname AS "นามสกุล",
-  p.sex AS "เพศ",
-  RIGHT(CONCAT('0', DAY(p.birthdate)), 2) AS "วันเกิด",
-  RIGHT(CONCAT('0', MONTH(p.birthdate)), 2) AS "เดือนเกิด",
-  YEAR(p.birthdate) AS "ปีเกิด",
-  p.cid AS "เลขบัตรประชาชน",
-  p.house_regist_type_id AS "ประเภทที่อยู่อาศัย",
-  CONCAT(v.address_id, RIGHT(CONCAT('0', v.village_moo), 2)) AS "เลขที่อยู่อาศัย",
-  v.village_name AS "ชื่อหมู่บ้าน",
-  REGEXP_REPLACE(h.address, '[^0-9]', '') AS "บ้านเลขที่",
-  h.road AS "ชื่อถนน"
-FROM person p
-  LEFT JOIN pname p2 ON p.pname = p2.`name`
-  LEFT JOIN house h ON p.house_id = h.house_id
-  LEFT JOIN village v ON h.village_id = v.village_id
-  LEFT JOIN patient p3 ON p.patient_hn = p3.hn
-WHERE p.house_regist_type_id IN (1, 3)
-  AND v.village_moo <> 0
-  AND p.nationality = 99
-  AND p.person_discharge_id = 9
-  AND p.birthdate IS NOT NULL;
+    case
+    when p.sex = 1  then '003'
+    when p.sex = 2 then '004'
+  end as pname,
+    REGEXP_REPLACE(p.fname, '\\s*\\(.*\\)$', '') AS fname,
+    REGEXP_REPLACE(p.lname, '\\s*\\(.*\\)$', '') AS lname,
+    p.sex,
+    LPAD(DAY(p.birthday), 2, '0') AS day_2digit,
+    LPAD(MONTH(p.birthday), 2, '0') AS month_2digit,
+    YEAR(p.birthday) AS year,
+    p.cid,
+    CASE
+    WHEN p.type_area IN ('1', '2', '3', '4') THEN p.type_area
+    ELSE '0'
+END AS type_area,
+    vl.village_code,
+    vl.village_name,
+    REGEXP_SUBSTR(p.addrpart, '[0-9]+(/[0-9]+)?') AS house_number,
+    p.road
+FROM 
+    patient p
+LEFT JOIN 
+    village vl ON vl.address_id = p.addressid
+WHERE 
+    p.death = 'N'
+    AND vl.village_code IS NOT NULL
+    and p.birthday is not null
+    AND p.pname IN ('นาย', 'นางสาว','นาง')
+    AND p.addrpart REGEXP '[0-9]'
+    AND LENGTH(YEAR(p.birthday)) = 4
+GROUP BY 
+    p.cid
