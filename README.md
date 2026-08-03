@@ -34,4 +34,16 @@ SQL scripts สำหรับการดึงข้อมูลจาก **HO
 3. กด **Run** เพื่อรัน script  
 4. ผลลัพธ์จะได้เป็นตารางข้อมูล สามารถ export ออกเป็น **CSV / Excel / JSON** ได้ตามต้องการ  
 
-> 💡 แนะนำให้ใช้สิทธิ์ **read-only account** ในการเชื่อมต่อฐานข้อมูล เพื่อความปลอดภัยของข้อมูลผู้ป่วย
+> แนะนำให้ใช้สิทธิ์ **read-only account** ในการเชื่อมต่อฐานข้อมูล เพื่อความปลอดภัยของข้อมูลผู้ป่วย
+
+---
+
+## ผู้พัฒนา (Author)
+
+**ชื่อ:** นายรัชชานนท์ นกน้อย  
+**ตำแหน่ง:** นักวิชาการคอมพิวเตอร์  
+**GitHub:** [ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318)  
+**LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://linkedin.com/in/ratchanon-noknoy)
+
+
+
