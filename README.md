@@ -70,10 +70,10 @@ SQL scripts สำหรับการดึงข้อมูลจาก **HO
 
 ## ผู้พัฒนา (Author)
 
-**ชื่อ:** นายรัชชานนท์ นกน้อย  
-**ตำแหน่ง:** นักวิชาการคอมพิวเตอร์  
-**GitHub:** [ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318)  
-**LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://linkedin.com/in/ratchanon-noknoy)
+- **ชื่อ:** รัชชานนท์ นกน้อย  
+- **ตำแหน่ง:** นักวิชาการคอมพิวเตอร์  
+- **GitHub:** [ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318)  
+- **LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://linkedin.com/in/ratchanon-noknoy)
 
 
 
