@@ -73,7 +73,7 @@ SQL scripts สำหรับการดึงข้อมูลจาก **HO
 - **ชื่อ:** รัชชานนท์ นกน้อย  
 - **ตำแหน่ง:** นักวิชาการคอมพิวเตอร์  
 - **GitHub:** [ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318)  
-- **LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://linkedin.com/in/ratchanon-noknoy)
+- **LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/?locale=th-TH)
 
 
 
