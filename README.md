@@ -7,21 +7,21 @@ SQL scripts สำหรับการดึงข้อมูลจาก **HO
  
 ## รายการสคริปต์ที่พร้อมใช้งาน
 
-- export_buddycare.sql → ดึงข้อมูลไปใช้กับระบบ BuddyCare
+- `export_buddycare.sql` → ดึงข้อมูลไปใช้กับระบบ BuddyCare
 
-- masked_patient.sql → สร้าง JSON ข้อมูลผู้ป่วยแบบ masked
+- `masked_patient.sql` → สร้าง JSON ข้อมูลผู้ป่วยแบบ masked
 
-- export_allergy.sql → รายงานประวัติการแพ้ยา
+- `export_allergy.sql` → รายงานประวัติการแพ้ยา
 
-- export_dtx.sql → ข้อมูล DTX records
+- `export_dtx.sql` → ข้อมูล DTX records
 
-- export_service_cost.sql → ค่าใช้จ่ายการรักษา
+- `export_service_cost.sql` → ค่าใช้จ่ายการรักษา
 
-- export_daily_visit.sql → รายงานการเข้ารับบริการรายวัน
+- `export_daily_visit.sql` → รายงานการเข้ารับบริการรายวัน
 
-- export_telemedicine.sql → รายชื่อผู้ป่วย telemedicine
+- `export_telemedicine.sql` → รายชื่อผู้ป่วย telemedicine
 
-- export_village.sql → รายชื่อหมู่บ้าน
+- `export_village.sql` → รายชื่อหมู่บ้าน
 
 ---
 # โครงสร้างตารางฐานข้อมูล HOSxP
