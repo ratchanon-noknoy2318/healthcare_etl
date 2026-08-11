@@ -13,6 +13,7 @@ SQL scripts สำหรับการดึงข้อมูลจาก **HO
 * `masked_patient.sql` → ปกปิดข้อมูลคนไข้ตามหลัก PDPA
 * `export_service_cost.sql` → Export ข้อมูลค่าใช้จ่ายในการรักษา
 * `migration_patient_data.sql` → สำหรับย้ายข้อมูลผู้ป่วยเข้าสู่ สอน.บัดดี้
+* `telemedicine_export.sql` → ดึงข้อมูลผู้ป่วยที่เข้ารับบริการการแพทย์ทางไกล (Telemedicine)
 * `view_allergy_history.sql` → ดูประวัติการแพ้ยา
 * `view_village.sql` → ดูรายชื่อหมู่บ้าน
 
