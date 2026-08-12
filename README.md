@@ -1,7 +1,6 @@
 # HOSxP เวอร์ชัน 3.66.11.00
 
-SQL scripts สำหรับการดึงข้อมูลจาก **HOSxP version 3.66.11.00**  
-ใช้เพื่อการศึกษา/งานวิจัย (Non-commercial use only) เช่น การ export ข้อมูลผู้ป่วย, OPD, Telemedicine, Drug allergy และอื่น ๆ
+SQL scripts สำหรับการดึงข้อมูลจาก HOSxP version 3.66.11.00 ใช้เพื่อการศึกษา/งานวิจัยเท่านั้น (Non-commercial use only) เช่น การ export ข้อมูลผู้ป่วย, OPD, Telemedicine, Drug allergy และข้อมูลอื่น ๆ **โดยไม่มี ER Diagram และไม่มีเอกสารประกอบฐานข้อมูลที่มีอยู่เดิม (Existing Documentation)**
 
 ---
  
