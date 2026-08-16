@@ -1,4 +1,4 @@
-# HOSxP Version 3.66.11.00 — SQL Scripts
+# HOSxP Version 3.66.11.00
 
 SQL scripts for extracting data from **HOSxP version 3.66.11.00** for educational and research purposes only.
 
