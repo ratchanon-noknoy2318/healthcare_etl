@@ -1,122 +1,90 @@
-# HOSxP Version 3.66.11.00
+# HOSxP Data Extraction & ETL Scripts (v3.66.11.00)
 
-SQL scripts for extracting data from **HOSxP version 3.66.11.00** for educational and research purposes only.
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-025E8C?style=flat&logo=databricks&logoColor=white)
+![HOSxP](https://img.shields.io/badge/HOSxP-3.66.11.00-2E8B57?style=flat)
+![License](https://img.shields.io/badge/License-Non--Commercial-red?style=flat)
 
-**Non-commercial use only.**
+A collection of SQL scripts designed for extracting, transforming, and analyzing healthcare data from **HOSxP version 3.66.11.00**.
 
-These scripts can be used for exporting and reviewing patient-related data, OPD records, telemedicine information, drug allergy history, service costs, and other healthcare-related data.
+---
 
-> **Important:** This project does not include an ER Diagram or any existing database documentation.
+## Project Highlights & Challenges
+
+* **Reverse Engineering:** Built without ER diagrams or existing database documentation. Table relationships and data structures were identified through hands-on analysis of the HOSxP system and existing SQL queries.
+* **Data Privacy:** Includes data-masking implementations to help protect sensitive Patient Identifiable Information (PII) during development and testing.
+* **Data Migration:** Includes scripts for extracting and transforming legacy hospital data for use in secondary applications such as **Son Buddy**.
 
 ---
 
 ## Available SQL Scripts
 
-| Script                       | Description                                             |
-| ---------------------------- | ------------------------------------------------------- |
-| `check_daily_patient.sql`    | Check patients who received services on a specific date |
-| `check_service_cost.sql`     | Check patient service costs and expenses                |
-| `dtx_export.sql`             | Export DTX records                                      |
-| `masked_patient.sql`         | Mask patient information according to PDPA principles   |
-| `export_service_cost.sql`    | Export healthcare service cost information              |
-| `migration_patient_data.sql` | Migrate patient data to Son Buddy                       |
-| `telemedicine_export.sql`    | Export patients who received telemedicine services      |
-| `view_allergy_history.sql`   | View patient drug allergy history                       |
-| `view_village.sql`           | View village information                                |
+| Script Name | Purpose & Description |
+| :--- | :--- |
+| `check_daily_patient.sql` | Tracks and counts patients who received medical services on a specific date. |
+| `check_service_cost.sql` | Retrieves patient service costs and total medical expenses. |
+| `dtx_export.sql` | Extracts DTX records for dental department reporting. |
+| `masked_patient.sql` | **[Security]** Demonstrates data-masking techniques for protecting patient information. |
+| `migration_patient_data.sql` | Transforms and migrates patient demographics and clinical records to **Son Buddy**. |
+| `telemedicine_export.sql` | Filters and exports patients who received telemedicine services. |
+| `view_allergy_history.sql` | Retrieves historical drug allergy information for patients. |
+| `view_village.sql` | Retrieves patient village and geographic information. |
 
 ---
 
-## HOSxP Database Structure
+## Database Schema Overview
 
-### Treatment Rights and Basic Information
+Key HOSxP tables used by these SQL scripts include:
 
-| Table        | Description                                |
-| ------------ | ------------------------------------------ |
-| `pttype`     | Patient healthcare entitlement information |
-| `occupation` | Patient occupation information             |
-| `religion`   | Patient religion information               |
+### 1. Patient Demographics & Rights
 
-### OPD (Outpatient Department)
+* `patient` — Core repository for general patient information.
+* `pttype` / `pttypeno` — Healthcare entitlement and insurance information.
+* `occupation` / `religion` / `thaiaddress` — Additional demographic information.
 
-| Table           | Description                                                                |
-| --------------- | -------------------------------------------------------------------------- |
-| `patient`       | General patient information                                                |
-| `ovst`          | Patient visit information                                                  |
-| `vn_stat`       | Visit and related service cost information                                 |
-| `opdscreen`     | Patient screening information                                              |
-| `ovstdiag`      | Diagnosis and treatment information                                        |
-| `ptcardno`      | Patient national identification card information                           |
-| `pttypeno`      | Healthcare entitlement number and related information                      |
-| `occupation`    | Patient occupation information                                             |
-| `pttype`        | Healthcare entitlement type                                                |
-| `spclty`        | Medical department/specialty information                                   |
-| `kskdepartment` | Service points, examination rooms, and healthcare units                    |
-| `thaiaddress`   | Patient address information, including subdistrict, district, and province |
+### 2. Outpatient Department (OPD)
+
+* `ovst` — Patient visit information.
+* `vn_stat` — Visit-related clinical and service cost information.
+* `opdscreen` — Patient screening and initial assessment information.
+* `ovstdiag` — Patient diagnosis information.
+* `kskdepartment` / `spclty` — Service points, clinics, and medical specialties.
 
 ---
 
-## Usage
+## Database Relationship Graph
 
-1. Open the **SQL Editor** in HOSxP, usually accessible through the lightning-bolt icon, or use another database client that can connect to the HOSxP database.
-2. Open the SQL script you want to run, for example:
+The following graph provides a simplified overview of how selected HOSxP tables are used together in these SQL scripts.
 
-   * `view_village.sql`
-   * `view_allergy_history.sql`
-   * `export_service_cost.sql`
-3. Review the SQL query before execution.
-4. Click **Run** to execute the script.
-5. The query results can be exported to formats such as **CSV, Excel, or JSON**, depending on the database client being used.
+```mermaid
+graph TD
 
-> **Recommendation:** Use a **read-only database account** when running these scripts to reduce the risk of accidentally modifying production data.
+    patient["patient"]
 
----
+    pttype["pttype"]
+    pttypeno["pttypeno"]
+    occupation["occupation"]
+    religion["religion"]
+    thaiaddress["thaiaddress"]
 
-## Data Privacy and Security
+    ovst["ovst"]
+    vn_stat["vn_stat"]
+    opdscreen["opdscreen"]
+    ovstdiag["ovstdiag"]
 
-These scripts may access sensitive patient information.
+    kskdepartment["kskdepartment"]
+    spclty["spclty"]
 
-Users are responsible for ensuring that any use, processing, storage, transfer, or disclosure of patient data complies with applicable laws, regulations, institutional policies, and data protection requirements.
+    patient --> ovst
 
-For research or development purposes:
+    patient --> pttype
+    patient --> pttypeno
+    patient --> occupation
+    patient --> religion
+    patient --> thaiaddress
 
-* Use anonymized or masked data whenever possible.
-* Avoid exporting unnecessary personally identifiable information (PII).
-* Do not expose patient data in public repositories.
-* Do not commit real patient data, database dumps, or credentials to Git repositories.
-* Use a read-only database account whenever possible.
-* Test SQL scripts in a non-production environment before using them against a production database.
-
-The `masked_patient.sql` script is provided as a data-masking example and should **not** be considered a complete guarantee of anonymization or regulatory compliance.
-
----
-
-## Disclaimer
-
-These SQL scripts are provided for **educational and research purposes only**.
-
-The scripts are provided **"as is"**, without any warranty regarding accuracy, completeness, compatibility, performance, or suitability for a particular purpose.
-
-Users should review and test every SQL query against their own HOSxP database environment before using it.
-
-The database structure, table names, column names, relationships, and available fields may differ between HOSxP versions, configurations, or customized installations.
-
-**Always create appropriate backups and verify queries before executing them on production systems.**
-
----
-
-## Author
-
-**Ratchanon Noknoy**
-
-Computer Technical Officer
-
-* GitHub: [ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318)
-* LinkedIn: [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/?locale=th-TH)
-
----
-
-## License and Usage
-
-This project is intended for **non-commercial educational and research use only**.
-
-Please review the repository license and applicable organizational policies before using, modifying, distributing, or integrating these scripts into other systems.
+    ovst --> vn_stat
+    ovst --> opdscreen
+    ovst --> ovstdiag
+    ovst --> kskdepartment
+    ovst --> spclty
