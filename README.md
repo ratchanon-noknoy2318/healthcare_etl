@@ -5,7 +5,7 @@
 ![HOSxP](https://img.shields.io/badge/HOSxP-3.66.11.00-2E8B57?style=flat)
 ![License](https://img.shields.io/badge/License-Non--Commercial-red?style=flat)
 
-A collection of SQL scripts designed for extracting, transforming, and analyzing healthcare data from BMS-HOSxP and BMS-HOSxP XE, used by **906** hospitals nationwide
+A collection of SQL scripts designed for extracting, transforming, and analyzing healthcare data from BMS-HOSxP and BMS-HOSxP XE, used by **900+** hospitals nationwide
 
 ---
 
