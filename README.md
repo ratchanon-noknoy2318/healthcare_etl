@@ -1,11 +1,11 @@
-# HOSxP Data Extraction & ETL Scripts (v3.66.11.00)
+# HOSxP — Used by 900+ Hospitals Nationwide
 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-025E8C?style=flat&logo=databricks&logoColor=white)
 ![HOSxP](https://img.shields.io/badge/HOSxP-3.66.11.00-2E8B57?style=flat)
 ![License](https://img.shields.io/badge/License-Non--Commercial-red?style=flat)
 
-A collection of SQL scripts designed for extracting, transforming, and analyzing healthcare data from BMS-HOSxP and BMS-HOSxP XE, used by **900+** hospitals nationwide
+A collection of SQL scripts for BMS-HOSxP data extraction and analysis, developed without ER diagrams or documentation.
 
 ---
 
