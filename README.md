@@ -5,7 +5,7 @@
 ![HOSxP](https://img.shields.io/badge/HOSxP-3.66.11.00-2E8B57?style=flat)
 ![License](https://img.shields.io/badge/License-Non--Commercial-red?style=flat)
 
-A collection of SQL scripts for BMS-HOSxP data extraction and analysis, developed without ER diagrams or documentation.
+A collection of SQL scripts for BMS-HOSxP data extraction and analysis, developed without ER diagrams, documentation, or existing SQL scripts for reference.
 
 ---
 
