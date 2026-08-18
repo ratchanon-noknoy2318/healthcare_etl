@@ -13,7 +13,7 @@ A collection of SQL scripts designed for extracting, transforming, and analyzing
 
 * **Reverse Engineering:** Built without ER diagrams or existing database documentation. Table relationships and data structures were identified through hands-on analysis of the HOSxP system and existing SQL queries.
 * **Data Privacy:** Includes data-masking implementations to help protect sensitive Patient Identifiable Information (PII) during development and testing.
-* **Data Migration:** Includes scripts for extracting and transforming legacy hospital data for use in secondary applications such as **Son Buddy**.
+* **Data Migration:** Includes scripts for extracting and transforming legacy hospital data for use in secondary applications such as **Buddy care** is a cloud-based healthcare platform by MOPH.
 
 ---
 
@@ -25,7 +25,7 @@ A collection of SQL scripts designed for extracting, transforming, and analyzing
 | `check_service_cost.sql` | Retrieves patient service costs and total medical expenses. |
 | `dtx_export.sql` | Extracts DTX records for dental department reporting. |
 | `masked_patient.sql` | **[Security]** Demonstrates data-masking techniques for protecting patient information. |
-| `migration_patient_data.sql` | Transforms and migrates patient demographics and clinical records to **Son Buddy**. |
+| `migration_patient_data.sql` | Transforms and migrates patient demographics and clinical records to **Buddy care** is a cloud-based healthcare platform by MOPH. |
 | `telemedicine_export.sql` | Filters and exports patients who received telemedicine services. |
 | `view_allergy_history.sql` | Retrieves historical drug allergy information for patients. |
 | `view_village.sql` | Retrieves patient village and geographic information. |
